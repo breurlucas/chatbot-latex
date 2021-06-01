@@ -734,6 +734,52 @@ Uma interface que traz uma fluidez na conversa com a proximidade humana traz alg
 \part{Desenvolvimento}
 % ----------------------------------------------------------
 
+Este capítulo apresenta uma descrição sobre o \emph{chatbot} desenvolvido na linguagem \emph{Python} para ser utilizado com os alunos do curso de Ciência da Computação do Senac, com o objetivo de tirar dúvidas e agilizar a comunicação que haveria entre o coordenador e os alunos.
+Apresentaremos ainda a metodologia, bases de dados utilizadas e como foram construídas e a forma com que a linguagem é processada.
+
+
+\section{Metodologia}
+
+Para o desenvolvimento do \emph{chatbot} usaremos a linguagem \emph{Python} e a biblioteca \emph{tkinter}, uma interface de mesma linguagem para utilização do \emph{Tk GUI toolkit}, uma ferramenta para construção de interfaces gráficas. O processamento da linguagem natural será realizado com o \emph{Natural Language Processing Toolkit (NLTK)}, também em \emph{python}, e o treinamento do \emph{chatbot} será feito através da biblioteca de \emph{Deep Learning Keras}, que permite um desenvolvimento de forma \emph{‘fail fast, fail early’} em linha com nossa abordagem holística do projeto.
+
+\section{Base de dados}
+A base de dados será consumida de um banco de dados em nuvem, no \emph{Azure}, que será alimentado primeiramente por um formulário, previamente alinhado com o coordenador do curso, que será enviado para os alunos de diferentes semestres do curso de Ciência da computação com perguntas como:
+\begin{enumerate}
+\item Ao entrar no curso ou até mesmo no dia a dia, você teve alguma das dúvidas que teve que esclarecer com o coordenador ou com os professores do seu curso? Selecione com base na frequência deste questionamento:
+\begin{itemize}
+\item “Eu preciso saber matemática?"
+\item “Qual nível de inglês eu preciso ter para conseguir me formar?”
+\item “Quais matérias eu terei nesse semestre?”
+\item “Quantas matérias de cálculo eu terei durante o curso?”
+\item “Quais matérias eu terei de eletivas para esse semestre?”
+\item “Quantas dp’s eu posso pegar para conseguir passar para o próximo semestre?”
+\item “Quais professores irão me dar aula?”
+\item “Durante o curso, quantas aulas eu terei?”
+\item “Qual horário da minha aula hoje?”
+\item “Quais as instalações do campus?”
+\item“O campus possui instalação X?”
+\end{itemize}
+
+\item Em uma escala de 0 a 5, o quão importante você considera os seguintes requisitos para as respostas de suas dúvidas?
+\begin{itemize}
+\item 0 - 5 : Agilidade
+\item 0 - 5 : Interação humana
+\item 0 - 5 : Interação por voz
+\item 0 - 5 : Modo de resposta formal
+\item 0 - 5 : Modo de resposta informal
+\end{itemize}
+
+\item Quais foram as principais dúvidas que você teve ao entrar no curso? (Campo aberto)
+\item Quais dúvidas você tem com frequência para perguntar ao coordenador? (Campo aberto)
+\end{enumerate}
+
+Após o recebimento dos formulários, essas perguntas serão arquivadas em um banco de dados, separadas por chaves principais das sentenças, e as respostas serão previamente alinhadas com o coordenador do curso para serem guardadas no banco de dados de acordo com a chave principal.
+
+\section{Processamento de linguagem}
+
+Como mencionado acima, para trabalhar com a linguagem natural, utilizaremos  o \emph{Natural Language Processing Toolkit (NLTK)}, um pacote em \emph{python} que permitirá o reprocessamento dos dados através de técnicas de classificação, \emph{parsing}, tokenização entre outros.
+O treinamento e validação do \emph{chatbot} será realizado através da biblioteca de \emph{Deep Learning Keras} que permite a utilização da plataforma \emph{TensorFlow} e também pode gerar modelos em \emph{Javascript} que executam diretamente no navegador. 
+
 % ---
 % Capitulo de desenvolvimento
 % ---
