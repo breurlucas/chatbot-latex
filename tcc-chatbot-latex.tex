@@ -102,7 +102,7 @@
 % ---
 % Informações de dados para CAPA e FOLHA DE ROSTO
 % ---
-\titulo{Desenvolvimento de \emph{chatbot} que simule interações humanas para tirar dúvidas de alunos do curso de Ciência da computação do Centro Universitário Senac}
+\titulo{Desenvolvimento de \emph{chatbot} que simule interações humanas para tirar dúvidas de alunos do curso de Ciência da Computação do Centro Universitário Senac}
 \autor{Beatriz Paiva Alves e Lucas Breur}
 \local{São Paulo - Brasil}
 \data{2021}
@@ -110,10 +110,7 @@
 \coorientador{Prof. M.Sc. Rodrigo Assirati Dias}
 \instituicao{
   Centro Universitário Senac - Santo Amaro
-  \par
-  Faculdade de Ciência da Computação
-  \par
-  Programa de Graduação}
+ }
 \tipotrabalho{Monografia}
 % O preambulo deve conter o tipo do trabalho, o objetivo, 
 % o nome da instituição e a área de concentração 
@@ -528,7 +525,7 @@ Segundo Fábio Moreno, 2015, atualmente é válido notar que a interação com a
 Dentro do ambiente estudantil foram encontrados problemas relacionados à comunicação entre alunos, professores e coordenadores para esclarecimento de dúvidas, esses problemas remetem a dificuldade de encontrar respostas rápidas sobre cursos, sobre as aulas, horários e dúvidas frequentes. Porque para acessar tais informações, os alunos devem entrar em contato com o coordenador, com a secretaria ou com o professor e esperar o tempo em que ele se encontra disponível para respondê-lo, e isso resulta em atraso no acesso às informações e aumento da mão de obra do lado da universidade.  
 
 
-\chapter{Objetivo}
+\section{Objetivo}
 
 Este trabalho tem como objetivo a criação de um \emph{chatbot} inteligente, configurado para receber perguntas e devolver em um tempo hábil a resposta, e a investigação das melhores tecnologias para o tornar apropriado para gerar uma comunicação digital e simplificar o atendimento para os alunos do curso em Ciência da Computação do Centro Universitário SENAC.
 
@@ -536,46 +533,48 @@ Este trabalho tem como objetivo a criação de um \emph{chatbot} inteligente, co
 % ----------------------------------------------------------
 % PARTE
 % ----------------------------------------------------------
-\part{Revisão Bibliográfica}
+%\part{}
 % ----------------------------------------------------------
 
 % ---
 % Capitulo com exemplos de comandos inseridos de arquivo externo 
 % ---
-\include{abntex2-modelo-include-comandos}
+%\include{abntex2-modelo-include-comandos}
 % ---
 
-\chapter{História e contexto}
-\label{cap_trabalho_academico}
+\chapter{Revisão Bibliográfica}
+\section{História e contexto}
+%\label{cap_trabalho_academico}
 
-\section{O que são \emph{chatbots}?}
+\subsection{O que são \emph{chatbots}?}
 Um \emph{chatbot}, na tradução literal é um robô de conversa, um sistema humano-computador com linguagem natural e tem como objetivo simular uma conversa inteligente com um ou mais usuários por meio de voz ou texto. 
 
 Eles são usados como um mecanismo inteligente por meios de sites, aplicativos e outras plataformas digitais para conversar e responder usuários da forma mais humana possível, assim mantendo um diálogo amigável, tirando dúvidas e até mesmo oferecendo suporte o mais rápido possível de determinada plataforma em que se encontra.
 
-\section{Linha histórica dos chatbots}
+\subsection{Linha histórica dos chatbots}
 Em 1950, Alan Turing propôs a questão “As máquinas podem pensar?”, e a partir disso os estudos e desenvolvimento de \emph{chatbots} começaram a surgir.
 
-Para isso foi necessário pensar que as máquinas teriam que possuir uma certa inteligência para que conseguissem pensar e imitar a conversa humana, o que trouxe o nome para o Teste de Turing como “O jogo da imitação”.
+%Para isso foi necessário pensar que as máquinas teriam que possuir uma certa inteligência para que conseguissem pensar e imitar a conversa humana, o que trouxe o nome para o Teste de Turing como “O jogo da imitação”.
 
-O termo Inteligência Artificial foi criado pelos cientistas Newell, Simon, e J. C. Shaw, em 1956, deu início a tentativa do processamento simbólico, que seriam os sistemas que manipulassem símbolos ao invés de serem somente baseados em números.
+O termo Inteligência Artificial foi criado pelos cientistas Newell, Simon, e J. C. Shaw, em 1956, deram início à tentativa do processamento simbólico, que seriam os sistemas que manipulassem símbolos ao invés de serem somente baseados em números.
 E então desde os anos 50, os diferentes estudos na área de IA consistem em criar e manter comportamentos inteligentes e com paridade humana nas máquinas, que se sintetizou em "Como fazer as máquinas compreenderem as coisas?"\supercite{minsky}.
 
 Com os estudos gerados a partir da tese de Turing, foram desenvolvidos esses \emph{chatbots}, para a simulação da interação humana, e o primeiro foi desenvolvido por Joseph Weizenbaum, em 1966, com o intuito de simular uma terapeuta que fazia perguntas e interagia com o usuário de acordo com os termos inseridos durante toda a conversa, chamada Eliza.
-Weizenbaum ficou surpreso como muitas pessoas não conseguiam distinguir Eliza de um psicólogo real, era implementado trabalhando com a semântica da interação do usuário, como o \emph{pattern matching}. O principal método era procurar chaves, o sujeito e o verbo na frase transformando “eu” em “você”, por exemplo, além de utilizar o resto da frase para construção da mensagem \supercite{weizenbaum-eliza}. Devido a essa simplicidade nos códigos, Eliza ainda não conseguia manter um diálogo prolongado com o usuário, e muitas vezes retornando o que ele dizia como forma de pergunta, isso fez com que mesmo sendo um avanço na tecnologia da época, ainda assim não passasse no teste de Turing.
+Weizenbaum ficou surpreso como muitas pessoas não conseguiam distinguir Eliza de um psicólogo real. 
+O principal método utilizado era procurar chaves, o sujeito e o verbo na frase transformando “eu” em “você”, por exemplo, além de utilizar o resto da frase para construção da mensagem, trabalhando com a semântica da interação do usuário, como o \emph{pattern matching} \supercite{weizenbaum-eliza}. Devido a essa simplicidade nos códigos, Eliza ainda não conseguia manter um diálogo prolongado com o usuário, e muitas vezes retornando o que ele dizia como forma de pergunta, isso fez com que mesmo sendo um avanço na tecnologia da época, ainda assim não passasse no teste de Turing.
 Com o passar dos anos, a partir da década de 70, novos robôs inteligentes foram sendo desenvolvidos, como por exemplo, Parry, em 1972, na Universidade de Stanford, simulando uma pessoa com esquizofrenia. 
 
 Em 1988, surgiu o Jabberwacky, desenvolvido para ser um robô de conversação que passasse no teste de Turing, com uma conversa bem-humorada, não cumpria com todos os requisitos para passar no mesmo. 
-Em 1992, o \emph{chatbot} Dr. Sbaiso, feito para o MS DOS, funcionava de forma com que a interação fosse feita de forma falada, com a voz, ainda sendo totalmente inovador, a voz não se parecia com um humano e seus dados ainda eram bem limitados, parecido com a Eliza de Weizenbaum.
+Em 1992, o \emph{chatbot} Dr. Sbaitso, feito para o MS DOS, funcionava de forma com que a interação fosse feita de forma falada, com a voz, ainda sendo totalmente inovador, a voz não se parecia com um humano e seus dados ainda eram bem limitados, parecido com a Eliza de Weizenbaum.
 
 Já em 1995, foi desenvolvida a \emph{Artificial Linguistic Internet Computer Entity (ALICE)}, um dos softwares mais famosos na área de inteligência artificial e \emph{chatbots}, foi programado em AIML e baseado em .XML, mesmo não passando no teste de Turing, ALICE fornecia respostas pré-programadas de acordo com a interação do usuário e ganhou alguns prêmios nessa área, hoje é um software de código aberto, que pode ser modificado e estudado por programadores do mundo todo.
 
-Com o avanço do processamento de dados, da internet e da computação de um modo geral, a IBM lançou o seu chatbot, Watson, em 2006, segudo Tahiana D'Edgemont, os tipos de uso de aplicações cognitivas incluem entender emoções, interpretar textos e imagens, dar respostas, ouvir sons entre outros.
+Com o avanço do processamento de dados, da internet e da computação de um modo geral, a IBM lançou o seu chatbot, Watson, em 2006, segundo Tahiana D'Edgemont, os tipos de uso de aplicações cognitivas incluem entender emoções, interpretar textos e imagens, dar respostas, ouvir sons entre outros.
 
 O grande crescimento da tecnologia trouxe em 2010 a Siri da \emph{Apple}, em 2012 o Google Now da \emph{Google}, em 2015 a Alexa da \emph{Amazon} e a Cortana da \emph{Microsoft}, que são considerados grandes \emph{chatbots} de assistência virtual usando linguagem natural para responder questóes, fazer recomendações e ações utilizando os sistemas da internet para os usuários das plataformas que eles estão inseridos.
 
 
-\section{Teste de Turing}
+\subsection{Teste de Turing}
 O teste de Turing, ou jogo da imitação, tem como objetivo analisar se o \emph{chatbot} consegue manter uma conversa computacional que seja praticamente imperceptível de que não seja humana.
 
 O modo com que Turing aplicou esse teste na época, foi com que houvesse três pessoas, um interrogador, ou juiz, em uma sala separada, conversando com dois candidatos de sexos diferentes por meio de uma tele impressora, para que a voz não fosse uma característica que interferisse na decisão final e que com base nas repostas o interrogador conseguiria descobrir o sexo de cada um.
@@ -584,28 +583,28 @@ A pergunta “As máquinas podem pensar?” (TURING, 1950) é substituída por �
 
 Nos dias atuais, segundo Luka Bradesko\supercite{LukaBradesko}, a forma que o teste é aplicado, é com o observador, sendo o humano, que questiona ou dialoga com alguém através de um link no computador. Esse alguém pode ser o \emph{chatbot}, e tem como objetivo fazer com que o observador acredite que é outro humano, se o objetivo for alcançado, o \emph{chatbot} então passa no teste de Turing.
 
-\chapter{Arquitetura e design de chatbots}
 
+\section{Arquitetura e design de \emph{chatbots}}
 \section{Arquitetura}
 Segundo o Dr. John Woods e Sameera A.\supercite{Abdul-Kader2015}, o design e a arquitetura de um \emph{chatbot} pode ser dividida em três partes, são:
 
 \begin{enumerate}
 	\item Interface: é a parte que desempenha as atividades entre o bot e o usuário.
-	\item Classificar: é a parte central, encontrada entre a interface (onde se recebe o input) e o \emph{graphmaster}, e seu funcionamento tem como objetivo filtrar esse input, classificá los em segmentos e a passagem pelos seus componentes lógicos, transferindo então a frase e/ou input para o \emph{graphmaster}.
+	\item Classificar: é a parte central, encontrada entre a interface (onde se recebe a entrada) e o \emph{graphmaster}, e seu funcionamento tem como objetivo filtrar essa entrada, classificá los em segmentos e a passagem pelos seus componentes lógicos, transferindo então a frase e/ou entrada para o \emph{graphmaster}.
 	\item \emph{Graphmaster}: é a parte que desempenha a função de construção da resposta, lidando então com as instruções das bases de dados e organizando os conteúdos para fazer a devolução da resposta de maneira com maior paridade e entendimento humano.
 \end{enumerate}
 
 As partes que constroem a arquitetura do \emph{chatbot} necessitam de alguns pontos principais que serão abordados nas próximas sessões.
 
-\section{Estratégias de comunicação}
-\subsection{Conversão de fala para texto}
+\subsection{Estratégias de comunicação}
+\subsubsection{Conversão de fala para texto}
 A fala é um dos mais poderosos meios de comunicação, e mais natural também. Segundo Sameera Abdul-Kader\supercite{Abdul-Kader2015}, a fala é amplamente aceita como o futuro da interação com aplicativos de computador e dispositivos móveis.
  
-De acordo com pesquisas neurológicas indicam que a fala ativa mais do cérebro do que as outras 8 funções de processamento. Segundo Clifford Nass e Scott Brave\supercite{wired-for-speech}, mostra que ao incorporar o processamento de voz, os \emph{chatbots} serão capazes de gerar uma interface sobre telefones e também rádios.
+De acordo com pesquisas neurológicas indicam que a fala ativa mais do cérebro do que as outras 8 funções de processamento. Clifford Nass e Scott Brave\supercite{wired-for-speech}, mostram que aos \emph{chatbots} incorporarem o processamento de voz, serão então capazes de gerar uma interface sobre telefones e também rádios.
  
 A conversão de voz em texto é chamada de \emph{Automatic Speech Recognition (ASR)} ou Reconhecimento Automático de Voz (RAV) e o objetivo é alcançar o reconhecimento de voz de um extenso vocabulário independente de quem fala.
 
-Segundo Gruhn, Minker e Nakamura\supercite{wired-for-speech-2}, mostra que a implementação e melhoria desse reconhecimento pode ser medida através de alguns fatores, tais como:
+Gruhn, Minker e Nakamura\supercite{wired-for-speech-2}, mostram que a implementação e melhoria desse reconhecimento pode ser medida através de alguns fatores, tais como:
 
 \begin{itemize}
 	\item Tamanho do vocabulário: A variação de caracteres, letras maiúsculas e minúsculas, dígitos, e milhões de palavras em vários idiomas.
@@ -617,7 +616,7 @@ Segundo Gruhn, Minker e Nakamura\supercite{wired-for-speech-2}, mostra que a imp
 
 O processo ASR é dito então como não determinístico, porque para cada tentativa de comunicar uma palavra, o som pode ser diferente por causa do ruído ambiente, estado emocional, distância do microfone, cansaço, entre outros fatores, mas pode ser modelado como um processo estocástico. Dado um som X, gera então o fonema mais provável, palavra, frase ou sentença de todas as palavras na língua.
 
-\subsection{Processamento de linguagem natural}
+\subsubsection{Processamento de linguagem natural}
 Segundo Tur e Mori\supercite{spoken-language-understan.}, o processamento de linguagem natural, conhecido também \emph{Natural Language Processing (NLP)}, tem como objetivo obter a saída do reconhecimento automático de voz e gerar uma representação estruturada do texto, conhecida como \emph{Spoken Language Understanding (SLU)} ou no caso de uma entrada de texto, \emph{Natural Language Understanding(NLU)}.
 
 Explorando formas de extrair semanticamente informações e significados escritos e falados para criar estruturas de dados gramaticais que podem ser processados pelo gerador de respostas.
@@ -674,7 +673,7 @@ O primeiro passo neste processo de extração é quebrar uma frase em \emph{toke
 \end{itemize}
 
 
-\subsection{Gerador de resposta}
+\subsubsection{Gerador de resposta}
 De acordo com Richard Wallace \supercite{response-generator}, o gerador de respostas é o componente central da arquitetura de um \emph{chatbot}. Recebendo uma representação estruturada do texto falado e devolvendo uma resposta para entregar ao usuário, que em seguida também passa a ser guardado no gerenciador de diálogo.
 
 Para a tomada de decisão sobre a resposta a ser dada, existem três componentes importantes:
@@ -689,19 +688,19 @@ Modelos baseados em regras tem como principal base de conhecimento os documentos
 
 Já Yan et al.\supercite{yan-etal-2016-docchat}, trazem a especificação desses pares serem feitas a mão como um problema, e passam o conceito do modelo baseado em recuperação de dados, trabalhando com <status> e <resposta>, ao invés de <padrão> e <modelo>. Então ele recebe uma entrada e procura no histórico os pares de <status> e <resposta> correspondente. Mas, esse modo de responder ainda traz um grande desafio em como conduzir a forma com que é feito a correspondência, ele parece mais intuitivo para achar o <status> mais parecido com os dados, e como uma forma mais efetiva seria comparar entre a <resposta>, porque se uma palavra aparecer mais de uma vez entre a <resposta> e a entrada faz com que se torne uma resposta de saída mais efetiva, mas não só porque as palavras aparecem novamente na entrada e na <resposta>, e é corresponde ao <status> não significa que é uma combinação exata, porque não se sabe se a <resposta> é realmente apropriada para aquele caso. Da mesma forma, se o sistema encontrar essa correspondência entre as respostas.
 
-\subsection{Base de conhecimento}
+\subsubsection{Base de conhecimento}
 A base de conhecimento de um \emph{chatbot} é a principal vertente de sua inteligência. Todos os dados que ele recebe por meio dessas bases são utilizados para a construção dos modelos para a devolutiva correta a entrada do usuário.
 
 Essas bases de dados podem ser coletadas de várias formas, e esses dados podem ser armazenados, treinados para utilização de inteligência artificial para serem classificados como dados que podem ser devolvidos ao usuário com entendimento como interação humana, e podem ser coletados através de:
 
 \begin{itemize}
-	\item Fóruns de discussão online: Huang, Zhou e Yang\supercite{oline-foruns-database} geraram uma base de conhecimento que busca em fóruns online maneiras de respostas baseadas em <input><response>. Tendo benefícios como a quantidade de tópicos e assuntos diferentes abordados nesses fóruns com diferentes respostas ou soluções para a mesma pergunta. Mas como desvantagem traz a não garantia da qualidade das respostas, tendo em vista que são publicadas por vários usuários tendo eles conhecimento ou não sobre o assunto, podendo também trazer respostas curtas e não definidas, e também pode trazer erros de comunicação pensando que os fóruns são baseados em \emph{threads} de resposta, então aquela <response> pode não corresponder exatamente aquele <input>. Para resolver isso, eles desenvolveram uma forma de tratar e treinar uma Máquina de Vetor Classificador (MVC) de forma com que ele identifique as respostas e perguntas diretamente da raiz, a \emph{thread} que elas pertencem e a forma com que são usadas as palavras chaves. Depois dessa classificação pela MVC, são aplicados filtros para remover respostas que utilizam palavras obscenas, ou com respostas pessoais do achismo (por exemplo, “meu”, “opinião”) e respostas que foram classificadas pela MVC como fora da \emph{thread}. Devolvendo então o par \emph{<thread title><response>} para treinar o \emph{bot} dessa forma.
+	\item Fóruns de discussão online: Huang, Zhou e Yang\supercite{oline-foruns-database} geraram uma base de conhecimento que busca em fóruns online maneiras de respostas baseadas em \emph{<input><response>}. Tendo benefícios como a quantidade de tópicos e assuntos diferentes abordados nesses fóruns com diferentes respostas ou soluções para a mesma pergunta. Mas como desvantagem traz a não garantia da qualidade das respostas, tendo em vista que são publicadas por vários usuários tendo eles conhecimento ou não sobre o assunto, podendo também trazer respostas curtas e não definidas, e também pode trazer erros de comunicação pensando que os fóruns são baseados em \emph{threads} de resposta, então aquela <response> pode não corresponder exatamente aquele \emph{<input>}. Para resolver isso, eles desenvolveram uma forma de tratar e treinar uma Máquina de Vetor Classificador (MVC) de forma com que ele identifique as respostas e perguntas diretamente da raiz, a \emph{thread} que elas pertencem e a forma com que são usadas as palavras chaves. Depois dessa classificação pela MVC, são aplicados filtros para remover respostas que utilizam palavras obscenas, ou com respostas pessoais do achismo (por exemplo, “meu”, “opinião”) e respostas que foram classificadas pela MVC como fora da \emph{thread}. Devolvendo então o par \emph{<thread title><response>} para treinar o \emph{bot} dessa forma.
 
 	\item \emph{Artificial Intelligence Markup Language (AIML)}: Madhumitha et. al \supercite{AIML}, explicam que o AIML funciona como forma de simplificar o modelo de diálogo, trabalhando com a definição da classe objeto que é responsável para fazer o molde dos padrões de conversa, responde de acordo com a conexão entre as questões previamente implantadas localizadas nos arquivos AIML definidos. Também possui suas vantagens e desvantagens, entre as vantagens temos a fácil implementação e aprendizado , o modo simples do sistema de diálogo o deixando intuitivo e o uso de XML representando uma forma de leitura para o computador, e entre suas desvantagem temos o conhecimento fornecido pelos arquivos, por precisar de atualização manual para implantação de novas perguntas e respostas por não existir extensões possíveis para o AIML Original, mas podendo trabalhar com o AIML 2.0 acessando recursos externos com comandos para o Assistente Virtual de respostas.
-	\item RiveScript: Funciona como o AIML, só que com algumas funcionalidades a mais, como o uso simplificado de expressões regulares de gatilhos de input de usuários, e pode ter integração com mecanismos ou sites de pesquisa para respostas dinâmicas.
+	\item RiveScript: Funciona como o AIML, só que com algumas funcionalidades a mais, como o uso simplificado de expressões regulares de gatilhos de entrada de usuários, e pode ter integração com mecanismos ou sites de pesquisa para respostas dinâmicas.
 \end{itemize} 
 
-\subsection{Gerenciamento de diálogo}
+\subsubsection{Gerenciamento de diálogo}
 O gerenciamento do diálogo funciona para transformar a resposta em uma forma mais parecida com a forma humana de responder, podendo utilizar estratégias de comunicação.
 
 Entre essas estratégias temos os truques de linguagem que são utilizados em caso de baixa probabilidade de resposta apropriada, Yu et. al\supercite{dialogue-manag.}, mostram que isso pode fazer com que o \emph{bot} pode continuar a conversa e responda como: uma mudança de tópico, ou seja, propondo outros tópicos para ter novos dados ou melhor forma de responder ao usuário, pode também fazer uma pergunta aberta, que seria além de dizer que não sabe responder especificamente o que o usuário disse, faz uma pergunta em troca, para assim manter a conversa, pode também pedir ao usuário que diga mais informações sobre o que ele deseja, então além de continuar a conversa ainda tem chances de fazer a devolutiva de uma resposta mais apropriada ao usuário.
@@ -731,18 +730,18 @@ Uma interface que traz uma fluidez na conversa com a proximidade humana traz alg
 % ----------------------------------------------------------
 % PARTE
 % ----------------------------------------------------------
-\part{Desenvolvimento}
+\section{Desenvolvimento}
 % ----------------------------------------------------------
 
 Este capítulo apresenta uma descrição sobre o \emph{chatbot} desenvolvido na linguagem \emph{Python} para ser utilizado com os alunos do curso de Ciência da Computação do Senac, com o objetivo de tirar dúvidas e agilizar a comunicação que haveria entre o coordenador e os alunos.
 Apresentaremos ainda a metodologia, bases de dados utilizadas e como foram construídas e a forma com que a linguagem é processada.
 
 
-\section{Metodologia}
+\subsection{Metodologia}
 
 Para o desenvolvimento do \emph{chatbot} usaremos a linguagem \emph{Python} e a biblioteca \emph{tkinter}, uma interface de mesma linguagem para utilização do \emph{Tk GUI toolkit}, uma ferramenta para construção de interfaces gráficas. O processamento da linguagem natural será realizado com o \emph{Natural Language Processing Toolkit (NLTK)}, também em \emph{python}, e o treinamento do \emph{chatbot} será feito através da biblioteca de \emph{Deep Learning Keras}, que permite um desenvolvimento de forma \emph{‘fail fast, fail early’} em linha com nossa abordagem holística do projeto.
 
-\section{Base de dados}
+\subsection{Base de dados}
 A base de dados será consumida de um banco de dados em nuvem, no \emph{Azure}, que será alimentado primeiramente por um formulário, previamente alinhado com o coordenador do curso, que será enviado para os alunos de diferentes semestres do curso de Ciência da computação com perguntas como:
 \begin{enumerate}
 \item Ao entrar no curso ou até mesmo no dia a dia, você teve alguma das dúvidas que teve que esclarecer com o coordenador ou com os professores do seu curso? Selecione com base na frequência deste questionamento:
@@ -775,7 +774,7 @@ A base de dados será consumida de um banco de dados em nuvem, no \emph{Azure}, 
 
 Após o recebimento dos formulários, essas perguntas serão arquivadas em um banco de dados, separadas por chaves principais das sentenças, e as respostas serão previamente alinhadas com o coordenador do curso para serem guardadas no banco de dados de acordo com a chave principal.
 
-\section{Processamento de linguagem}
+\subsection{Processamento de linguagem}
 
 Como mencionado acima, para trabalhar com a linguagem natural, utilizaremos  o \emph{Natural Language Processing Toolkit (NLTK)}, um pacote em \emph{python} que permitirá o reprocessamento dos dados através de técnicas de classificação, \emph{parsing}, tokenização entre outros.
 O treinamento e validação do \emph{chatbot} será realizado através da biblioteca de \emph{Deep Learning Keras} que permite a utilização da plataforma \emph{TensorFlow} e também pode gerar modelos em \emph{Javascript} que executam diretamente no navegador. 
