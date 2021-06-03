@@ -579,7 +579,7 @@ O teste de Turing, ou jogo da imitação, tem como objetivo analisar se o \emph{
 
 O modo com que Turing aplicou esse teste na época, foi com que houvesse três pessoas, um interrogador, ou juiz, em uma sala separada, conversando com dois candidatos de sexos diferentes por meio de uma tele impressora, para que a voz não fosse uma característica que interferisse na decisão final e que com base nas repostas o interrogador conseguiria descobrir o sexo de cada um.
 
-A pergunta “As máquinas podem pensar?” (TURING, 1950) é substituída por “O que vai acontecer se a máquina se passar pela parte 'A' neste jogo”, o que traz à tona se as máquinas conseguem se passar por seres humanos em uma conversa, enganando então o interrogador ou o juiz da situação.\supercite{Turing}
+A pergunta “As máquinas podem pensar?” é substituída por “O que vai acontecer se a máquina se passar pela parte 'A' neste jogo”, o que traz à tona se as máquinas conseguem se passar por seres humanos em uma conversa, enganando então o interrogador ou o juiz da situação.\supercite{Turing}
 
 Nos dias atuais, segundo Luka Bradesko\supercite{LukaBradesko}, a forma que o teste é aplicado, é com o observador, sendo o humano, que questiona ou dialoga com alguém através de um link no computador. Esse alguém pode ser o \emph{chatbot}, e tem como objetivo fazer com que o observador acredite que é outro humano, se o objetivo for alcançado, o \emph{chatbot} então passa no teste de Turing.
 
@@ -589,12 +589,12 @@ Nos dias atuais, segundo Luka Bradesko\supercite{LukaBradesko}, a forma que o te
 Segundo o Dr. John Woods e Sameera A.\supercite{Abdul-Kader2015}, o design e a arquitetura de um \emph{chatbot} pode ser dividida em três partes, são:
 
 \begin{enumerate}
-	\item Interface: é a parte que desempenha as atividades entre o bot e o usuário.
-	\item Classificar: é a parte central, encontrada entre a interface (onde se recebe a entrada) e o \emph{graphmaster}, e seu funcionamento tem como objetivo filtrar essa entrada, classificá los em segmentos e a passagem pelos seus componentes lógicos, transferindo então a frase e/ou entrada para o \emph{graphmaster}.
+	\item \emph{Responder}: é a parte que desempenha as atividades entre o bot e o usuário.
+	\item \emph{Classifier}: é a parte central, encontrada entre o \emph{Responder} (onde se recebe a entrada) e o \emph{Graphmaster}, e seu funcionamento tem como objetivo filtrar essa entrada, classificá em segmentos e a passagem pelos seus componentes lógicos, transferindo então a frase e/ou entrada para o \emph{Graphmaster}.
 	\item \emph{Graphmaster}: é a parte que desempenha a função de construção da resposta, lidando então com as instruções das bases de dados e organizando os conteúdos para fazer a devolução da resposta de maneira com maior paridade e entendimento humano.
 \end{enumerate}
 
-As partes que constroem a arquitetura do \emph{chatbot} necessitam de alguns pontos principais que serão abordados nas próximas sessões.
+As partes que constroem a arquitetura do \emph{chatbot} necessitam de alguns pontos principais que serão abordados nas próximas secções.
 
 \subsection{Estratégias de comunicação}
 \subsubsection{Conversão de fala para texto}
@@ -730,20 +730,29 @@ Uma interface que traz uma fluidez na conversa com a proximidade humana traz alg
 % ----------------------------------------------------------
 % PARTE
 % ----------------------------------------------------------
-\section{Desenvolvimento}
+\chapter{Desenvolvimento}
 % ----------------------------------------------------------
 
-Este capítulo apresenta uma descrição sobre o \emph{chatbot} desenvolvido na linguagem \emph{Python} para ser utilizado com os alunos do curso de Ciência da Computação do Senac, com o objetivo de tirar dúvidas e agilizar a comunicação que haveria entre o coordenador e os alunos.
-Apresentaremos ainda a metodologia, bases de dados utilizadas e como foram construídas e a forma com que a linguagem é processada.
+Este capítulo apresenta uma descrição sobre a arquitetura e tecnologias escolhidas para o desenvolvimento de um \emph{chatbot}. O público-alvo serão os alunos do curso de Ciência da Computação do Senac Santo Amaro, com o objetivo de tirar dúvidas e agilizar a comunicação que haveria entre a secretaria/o coordenador e os mesmos.
 
 
-\subsection{Metodologia}
+\section{Metodologia}
 
-Para o desenvolvimento do \emph{chatbot} usaremos a linguagem \emph{Python} e a biblioteca \emph{tkinter}, uma interface de mesma linguagem para utilização do \emph{Tk GUI toolkit}, uma ferramenta para construção de interfaces gráficas. O processamento da linguagem natural será realizado com o \emph{Natural Language Processing Toolkit (NLTK)}, também em \emph{python}, e o treinamento do \emph{chatbot} será feito através da biblioteca de \emph{Deep Learning Keras}, que permite um desenvolvimento de forma \emph{‘fail fast, fail early’} em linha com nossa abordagem holística do projeto.
+A fala é amplamente aceita como o futuro da interação com assistentes eletrônicos conforme estabelecido na secção 2.3.1.1, porém, com o intuito de tornar o escopo do projeto mais administrável, optou-se pela interação por texto. Desta forma, o processamento de linguagem natural será realizado por um \emph{software NLU}.
 
-\subsection{Base de dados}
-A base de dados será consumida de um banco de dados em nuvem, no \emph{Azure}, que será alimentado primeiramente por um formulário, previamente alinhado com o coordenador do curso, que será enviado para os alunos de diferentes semestres do curso de Ciência da computação com perguntas como:
+As seguintes tecnologias serão utilizadas para atender a arquitetura em três partes exposta no início do capítulo 2.3:
+
 \begin{enumerate}
+\item \emph{Responder}: composto por uma caixa de digitação e painel de visualização desenvolvidos em Python com o auxílio da biblioteca tkinter; esta é uma ponte em Python para criação de telas interativas através do \emph{toolkit} Tk. O \emph{Responder} é responsável por transmitir para e receber textos do \emph{Classifier}.
+\item \emph{Classifier}: conforme citado anteriormente no capítulo em questão, é a secção responsável pelo processamento da entrada e posterior transferência para a última parte, o \emph{Graphmaster}. Neste módulo encaixa-se o software \emph{NLU}. Será utilizado o \emph{Natural Language Processing Toolkit (NLTK)}, um \emph{plugin} gratuito para Python mencionado também por Dr. John Woods e Sameera A.\supercite{Abdul-Kader2015} como uma plataforma amplamente utilizada.
+\item \emph{Graphmaster}: o cérebro do \emph{software} onde são produzidas as respostas para a entrada pré-processada recebida do \emph{Classifier}. O treinamento será efetuado com auxílio de \emph{deep learning} através da biblioteca Keras; esta permite um desenvolvimento de forma \emph{‘fail fast, fail early’} em linha com nossa abordagem holística do projeto.
+\end{enumerate}
+
+A base de dados será armazenada em nuvem na plataforma Azure e receberá os dados primeiramente através de um formulário, previamente alinhado com o coordenador do curso, enviado para os alunos de diferentes semestres do curso de Ciência da Computação com perguntas como:
+\begin{enumerate}
+\item Quais foram as principais dúvidas que você teve ao entrar no curso? (Campo aberto)
+\item Quais dúvidas você tem com frequência para perguntar ao coordenador? (Campo aberto)
+
 \item Ao entrar no curso ou até mesmo no dia a dia, você teve alguma das dúvidas que teve que esclarecer com o coordenador ou com os professores do seu curso? Selecione com base na frequência deste questionamento:
 \begin{itemize}
 \item “Eu preciso saber matemática?"
@@ -768,16 +777,9 @@ A base de dados será consumida de um banco de dados em nuvem, no \emph{Azure}, 
 \item 0 - 5 : Modo de resposta informal
 \end{itemize}
 
-\item Quais foram as principais dúvidas que você teve ao entrar no curso? (Campo aberto)
-\item Quais dúvidas você tem com frequência para perguntar ao coordenador? (Campo aberto)
 \end{enumerate}
 
-Após o recebimento dos formulários, essas perguntas serão arquivadas em um banco de dados, separadas por chaves principais das sentenças, e as respostas serão previamente alinhadas com o coordenador do curso para serem guardadas no banco de dados de acordo com a chave principal.
-
-\subsection{Processamento de linguagem}
-
-Como mencionado acima, para trabalhar com a linguagem natural, utilizaremos  o \emph{Natural Language Processing Toolkit (NLTK)}, um pacote em \emph{python} que permitirá o reprocessamento dos dados através de técnicas de classificação, \emph{parsing}, tokenização entre outros.
-O treinamento e validação do \emph{chatbot} será realizado através da biblioteca de \emph{Deep Learning Keras} que permite a utilização da plataforma \emph{TensorFlow} e também pode gerar modelos em \emph{Javascript} que executam diretamente no navegador. 
+O objetivo final é oferecer o serviço permanentemente para os alunos. Porém, somente durante o desenvolvimento será identificada a real complexidade do projeto e, ao término, a usabilidade do produto final. Desta forma o software será hospedado localmente até a apresentação final. Caso o experimento seja bem-sucedido e viável para aplicação real, considera-se a implementação no \emph{website} da instituição, se tal laurel for concedido aos alunos deste trabalho. As ferramentas mencionadas foram escolhidas de tal forma a propiciar esta transição de forma fluida, como o banco de dados em nuvem e a biblioteca Keras, que permite a geração de modelos em \emph{Javascript} que executam diretamente no navegador.
 
 % ---
 % Capitulo de desenvolvimento
